@@ -1,0 +1,7 @@
+# Runtime data — never commit
+downloads/
+cookies/
+__pycache__/
+*.pyc
+_server_out.txt
+_server_err.txt

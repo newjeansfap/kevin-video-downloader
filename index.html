@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ececec" />
+  <title>Kevin Lim Fung Yen Video Downloader</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-header__bar"></div>
+    <div class="app-header__inner">
+      <h1 class="app-title">Kevin Lim Fung Yen Video Downloader</h1>
+      <p class="app-tagline">Online video downloader — designed by Kevin Lim Fung Yen</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- URL -->
+    <section class="card">
+      <h2 class="card__title">Video URL</h2>
+      <input id="url" class="field" type="text" placeholder="Paste an X / Twitter video link..." autocomplete="off" />
+    </section>
+
+    <!-- Format -->
+    <section class="card">
+      <h2 class="card__title">Format</h2>
+      <div class="radio-grid">
+        <label class="radio"><input type="radio" name="format" value="video_audio" checked /><span>Video + audio (MP4)</span></label>
+        <label class="radio"><input type="radio" name="format" value="video_only" /><span>Video only (no sound)</span></label>
+        <label class="radio"><input type="radio" name="format" value="audio_only" /><span>Audio only (m4a)</span></label>
+      </div>
+    </section>
+
+    <!-- Login -->
+    <section class="card">
+      <h2 class="card__title">X login (for videos that need it)</h2>
+      <div class="radio-grid radio-grid--login">
+        <label class="radio"><input type="radio" name="login" value="none" checked /><span>None (public)</span></label>
+        <label class="radio"><input type="radio" name="login" value="chrome" /><span>Chrome</span></label>
+        <label class="radio"><input type="radio" name="login" value="edge" /><span>Edge</span></label>
+        <label class="radio"><input type="radio" name="login" value="firefox" /><span>Firefox</span></label>
+        <label class="radio"><input type="radio" name="login" value="file" /><span>cookies.txt file</span></label>
+      </div>
+      <p class="hint" id="login-hint">None — only downloads public videos.</p>
+      <div class="cookie-row" id="cookie-row" hidden>
+        <label class="file-pick" for="cookie-input">Upload cookies.txt…</label>
+        <input id="cookie-input" type="file" accept=".txt" hidden />
+        <span class="file-name" id="cookie-name">No file chosen</span>
+      </div>
+    </section>
+
+    <!-- Progress + controls -->
+    <section class="card">
+      <h2 class="card__title">Download</h2>
+      <div class="status-line">
+        <span class="status" id="status">Ready.</span>
+        <span class="status-detail" id="status-detail"></span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress" style="width:0%"></div></div>
+
+      <div class="btn-row">
+        <button id="btn-download" class="btn btn--primary">Download</button>
+        <button id="btn-pause" class="btn" disabled>Pause</button>
+        <button id="btn-resume" class="btn" disabled>Resume</button>
+        <button id="btn-cancel" class="btn btn--danger" disabled>Cancel</button>
+      </div>
+    </section>
+
+    <!-- Downloads -->
+    <section class="card">
+      <h2 class="card__title">Completed downloads</h2>
+      <ul class="file-list" id="file-list">
+        <li class="file-empty">Nothing downloaded yet.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">Kevin Lim Fung Yen Video Downloader — A video downloader.</footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>

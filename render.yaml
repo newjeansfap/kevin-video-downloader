@@ -1,0 +1,9 @@
+# Render blueprint — lets you deploy this app with a single click.
+# See README.md for the one-click "Deploy to Render" button.
+services:
+  - type: web
+    name: kevin-video-downloader
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
